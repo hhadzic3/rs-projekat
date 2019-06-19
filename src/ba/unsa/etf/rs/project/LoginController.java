@@ -27,14 +27,16 @@ public class LoginController {
             Stage stage = new Stage();
             Parent root = null;
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
-                MainController mainController = new MainController(null);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/mainform.fxml"));
+                MainController mainController = new MainController();
                 loader.setController(mainController);
                 root = loader.load();
                 stage.setTitle("Movie Library");
                 stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
                 stage.setResizable(false);
                 stage.show();
+                Stage s = (Stage) nameField.getScene().getWindow();
+                s.close();
             } catch (IOException e) {
             e.printStackTrace();
         }
@@ -53,7 +55,7 @@ public class LoginController {
         return true;
     }
     private boolean Exists(String text , String pas) {
-        if(text == "administrator" &&  pas == "pass") return true;
+        if(text.equals("admin") &&  pas.equals("pass")) return true;
         return false;
     }
 

@@ -21,6 +21,16 @@ public class Movie {
         this.length = length;
         this.publishDate = publishDate;
     }
+    public Movie( String title, String actors, String category, String about, String director, Integer length, LocalDate publishDate) {
+        this.title = title;
+        this.actors = actors;
+        this.category = category;
+        this.about = about;
+        this.director = director;
+        this.length = length;
+        this.publishDate = publishDate;
+    }
+
 
     public String getTitle() {
         return title;
