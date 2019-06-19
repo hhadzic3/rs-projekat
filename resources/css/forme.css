@@ -1,0 +1,20 @@
+.poljeIspravno {
+    -fx-control-inner-background: greenyellow;
+}
+.poljeNijeIspravno {
+    -fx-control-inner-background: lightpink;
+}
+.dodaj{
+    -fx-graphic: url("add.png");
+    -fx-graphic-text-gap: 20px;
+
+}
+.brisi{
+    -fx-graphic: url("delete.png");
+    -fx-graphic-text-gap: 20px;
+}
+.edit{
+    -fx-graphic: url("change.png");
+    -fx-graphic-text-gap: 20px;
+
+}

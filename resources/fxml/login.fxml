@@ -9,10 +9,13 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-
+<?import java.net.URL?>
 
 <BorderPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-fx:controller="ba.unsa.etf.rs.project.LoginController">
+            fx:controller="ba.unsa.etf.rs.project.LoginController">
+    <stylesheets>
+        <URL value="@/css/forme.css" />
+    </stylesheets>
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
