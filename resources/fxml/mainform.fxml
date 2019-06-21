@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <!--fx:controller="ba.unsa.etf.rs.zadaca3.MainController"-->
+    <stylesheets>
+        <URL value="@/css/forme.css" />
+    </stylesheets>
+   <center>
+      <TableView fx:id="tblBooks" prefHeight="324.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colAuthor" prefWidth="139.999966442585" text="Director" />
+          <TableColumn fx:id="colTitle" minWidth="0.0" prefWidth="271.2000274658203" text="Title" />
+            <TableColumn fx:id="colPublishDate" prefWidth="132.00006103515625" text="Publish date" />
+        </columns>
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </BorderPane.margin>
+      </TableView>
+   </center>
+   <top>
+      <VBox prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu text="_File">
+                  <items>
+                    <MenuItem onAction="#menuOpen" text="O_pen">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="O" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem onAction="#menuSave" text="S_ave">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem onAction="#menuPrint" text="P_rint">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="P" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem onAction="#menuExit" text="E_xit">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="E" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <MenuItem onAction="#menuAdd" text="Add">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem onAction="#menuChange" text="C_hange">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="C" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                    <MenuItem onAction="#menuDelete" text="D_elete">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="D" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                  </items>
+                </Menu>
+                <Menu text="_Help">
+                  <items>
+                    <MenuItem onAction="#menuAbout" text="A_bout">
+                           <accelerator>
+                              <KeyCodeCombination alt="ANY" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                  </items>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </MenuBar>
+            <ToolBar VBox.vgrow="NEVER">
+              <items>
+                <Button fx:id="tbAdd" mnemonicParsing="false" onAction="#actionAdd" styleClass="dodaj">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="tbChange" mnemonicParsing="false" onAction="#actionChange" styleClass="edit">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="tbDelete" mnemonicParsing="false" onAction="#actionDelete" styleClass="brisi">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+              </items>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <ToolBar BorderPane.alignment="CENTER">
+         <items>
+            <Label fx:id="statusMsg" text="" />
+         </items>
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </BorderPane.margin>
+      </ToolBar>
+   </bottom>
+</BorderPane>
