@@ -33,8 +33,10 @@
       </Label>
    </top>
    <right>
-      <ImageView fx:id="imgAbout" fitHeight="150.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         </ImageView>
+      <ImageView fx:id="imgAbout" fitHeight="176.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../css/movie-png.png" />
+         </image></ImageView>
    </right>
    <left>
       <Label prefHeight="32.0" prefWidth="474.0" text="This movie library app is here for you to finally have your movies organized." BorderPane.alignment="CENTER">
