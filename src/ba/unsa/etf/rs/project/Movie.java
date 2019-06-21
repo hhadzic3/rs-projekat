@@ -11,22 +11,22 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(Integer id, String title, String actors, String category, String about, String director, Integer length, LocalDate publishDate) {
+    public Movie(int id, String author, String title, String category, int length, String about, String actors, LocalDate publishDate) {
         this.id = id;
         this.title = title;
         this.actors = actors;
         this.category = category;
         this.about = about;
-        this.director = director;
+        this.director = author;
         this.length = length;
         this.publishDate = publishDate;
     }
-    public Movie( String title, String actors, String category, String about, String director, Integer length, LocalDate publishDate) {
+    public Movie( String author, String title, String category, int length, String about, String actors, LocalDate publishDate) {
         this.title = title;
         this.actors = actors;
         this.category = category;
         this.about = about;
-        this.director = director;
+        this.director = author;
         this.length = length;
         this.publishDate = publishDate;
     }
