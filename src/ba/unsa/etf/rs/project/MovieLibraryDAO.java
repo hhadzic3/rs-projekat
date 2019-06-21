@@ -48,12 +48,12 @@ public class MovieLibraryDAO {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:videoLibrary.db");
 
-            getMovies = conn.prepareStatement("SELECT id, director, title, category, length, publishdate, about, actors FROM movies ORDER BY id ASC ;");
+            getMovies = conn.prepareStatement("SELECT id, director, title, category, length,  about, actors,publishdate FROM movies ORDER BY id ASC ;");
             addMovie = conn.prepareStatement("INSERT INTO movies values (?, ?, ?, ?, ?, ?, ? , ?)");
             deleteMovies = conn.prepareStatement("DELETE FROM movies where id = ?");
             truncMovies = conn.prepareStatement("DELETE FROM movies where 1=1");
-            changeMovie = conn.prepareStatement("UPDATE movies SET  director = ?, title = ?, category = ?, length = ?, publishdate = ? , " +
-                    "about = ? , actors = ? where id = ?");
+            changeMovie = conn.prepareStatement("UPDATE movies SET  director = ?, title = ?, category = ?, length = ? , " +
+                    "about = ? , actors = ?, publishdate = ? where id = ?");
             getIdMovies = conn.prepareStatement("SELECT MAX(id)+1 FROM movies");
 
         } catch (SQLException e) {
@@ -64,12 +64,12 @@ public class MovieLibraryDAO {
 
 /*
     public void defaultData() {
-        addBook(new Movie("Meša Selimović" , "Tvrđava" , "abcd" , 500 , LocalDate.now()));
-        addBook(new Movie("Ivo Andrić" , "Travnička hronika" , "abcd" , 500 , LocalDate.now()));
-        addBook(new Movie("J. K. Rowling" , "Harry Potter" , "abcd" , 500 , LocalDate.now()));
+        addMovie(new Movie("Meša Selimović" , "Tvrđava" , "abcd" , 500 , LocalDate.now()));
+        addMovie(new Movie("Ivo Andrić" , "Travnička hronika" , "abcd" , 500 , LocalDate.now()));
+        addMovie(new Movie("J. K. Rowling" , "Harry Potter" , "abcd" , 500 , LocalDate.now()));
     }*/
 
-    public void addBook(Movie book){
+    public void addMovie(Movie book){
         try {
             ResultSet rs = getIdMovies.executeQuery();
             int id = 1;
@@ -96,7 +96,7 @@ public class MovieLibraryDAO {
         try {
             result = getMovies.executeQuery();
             Movie k;
-            while (  ( k = getBooksQuery(result) ) != null )
+            while (  ( k = getMoviesQuery(result) ) != null )
                 books.add(k);
             result.close();
         } catch (SQLException e) {
@@ -105,8 +105,8 @@ public class MovieLibraryDAO {
         return books;
     }
 
-    private Movie getBooksQuery(ResultSet result) {
-        Movie book = null;
+    private Movie getMoviesQuery(ResultSet result) {
+        Movie movie = null;
         try {
             if (result.next() ){
                 int id = result.getInt("id");
@@ -115,16 +115,16 @@ public class MovieLibraryDAO {
                 String category = result.getString("category");
                 String about = result.getString("about");
                 String actors = result.getString("actors");
-                int brStrane = result.getInt("length");
+                int duz = result.getInt("length");
                 LocalDate publishDate = result.getDate("publishDate").toLocalDate();
 
-                book = new Movie(id , author , title ,category ,brStrane ,about , actors, publishDate );
-                book.setId(id);
+                movie = new Movie(id , author , title ,category ,duz ,about , actors, publishDate );
+                movie.setId(id);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return book;
+        return movie;
     }
 
     public void deleteBook(Movie book) {
