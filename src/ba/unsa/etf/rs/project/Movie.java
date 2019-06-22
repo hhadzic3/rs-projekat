@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 public class Movie {
     private String title, actors, category, about,  director;
     private Integer length , id;
-    private LocalDate publishDate;
+    private LocalDate publishDate ;
     public static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd. MM. yyyy");
 
 
