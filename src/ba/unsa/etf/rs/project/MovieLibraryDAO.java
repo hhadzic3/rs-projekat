@@ -127,7 +127,7 @@ public class MovieLibraryDAO {
         return movie;
     }
 
-    public void deleteBook(Movie book) {
+    public void deleteMovie(Movie book) {
         try {
             if (book != null) {
                 deleteMovies.setInt(1, book.getId());
@@ -137,7 +137,7 @@ public class MovieLibraryDAO {
             e.printStackTrace();
         }
     }
-    public void updateBook (Movie movie) {
+    public void updateMovie(Movie movie) {
         try {
                 changeMovie.setString(1,movie.getDirector());
                 changeMovie.setString(2, movie.getTitle());
@@ -153,7 +153,7 @@ public class MovieLibraryDAO {
         }
     }
 
-    public void clearAll() {
+    public void deleteAllMovies() {
         try {
             truncMovies.executeUpdate();
         } catch (SQLException e) {

@@ -98,6 +98,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return title;
+        return director + title + publishDate;
     }
 }

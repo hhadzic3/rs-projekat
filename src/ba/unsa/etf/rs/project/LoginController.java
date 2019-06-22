@@ -8,11 +8,17 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class LoginController {
     public TextField nameField;
     public PasswordField passwordField;
+
 
     public void loginAction(ActionEvent actionEvent) {
         boolean sveOk = true;
@@ -23,21 +29,23 @@ public class LoginController {
 
         if(Exists(nameField.getText(),passwordField.getText())){
             Stage stage = new Stage();
-            Parent root = null;
+
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/mainform.fxml"));
-                MainController mainController = new MainController();
-                loader.setController(mainController);
-                root = loader.load();
+                //FXMLLoader loader
+                Parent root = FXMLLoader.load(getClass().getResource("/fxml/mainform.fxml"));
+                //MainController mainController = new MainController();
+                //loader.setController(mainController);
+                //root = loader.load();
                 stage.setTitle("Movie Library");
                 stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-                stage.setResizable(false);
                 stage.show();
-                Stage s = (Stage) nameField.getScene().getWindow();
-                s.close();
             } catch (IOException e) {
             e.printStackTrace();
-        }
+            }
+            finally {
+                Stage s = (Stage) nameField.getScene().getWindow();
+                s.close();
+            }
         }
         else return;
     }
