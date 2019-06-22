@@ -1,5 +1,8 @@
-package ba.unsa.etf.rs.project;
+package ba.unsa.etf.rs.project.Controllers;
 
+import ba.unsa.etf.rs.project.Models.Movie;
+import ba.unsa.etf.rs.project.MovieLibraryDAO;
+import ba.unsa.etf.rs.project.XMLFormat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,10 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -188,4 +189,16 @@ public class MainController {
     }
 
 
+    public void priceAction(ActionEvent actionEvent) {
+        Stage stage = null;
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/price.fxml"));
+            stage.setTitle("Price list");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

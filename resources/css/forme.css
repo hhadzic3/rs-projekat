@@ -37,3 +37,7 @@
     -fx-background-image: url("img/main_background.jpg");
     -fx-background-size: cover;
 }
+.image3{
+    -fx-background-image: url("img/price_list.png");
+    -fx-background-size: cover;
+}

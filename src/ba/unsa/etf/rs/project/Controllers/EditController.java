@@ -1,5 +1,6 @@
-package ba.unsa.etf.rs.project;
+package ba.unsa.etf.rs.project.Controllers;
 
+import ba.unsa.etf.rs.project.Models.Movie;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
