@@ -10,13 +10,14 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.project.LoginController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="image" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.project.LoginController">
     <stylesheets>
         <URL value="@/css/forme.css" />
     </stylesheets>
    <center>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="561.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -26,26 +27,32 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
+            <TextField fx:id="nameField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="301.0" promptText="User name" style="-fx-background-color: #42668b;">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="302.0" promptText="Password" style="-fx-background-color: #67788b;" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
             <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="2">
               <buttons>
-                <Button mnemonicParsing="false" onAction="#loginAction" text="Login" />
-                  <Button mnemonicParsing="false" onAction="#register" text="Register" />
-                  <Button mnemonicParsing="false" onAction="#cancleAction" text="Cancle" />
+                <Button mnemonicParsing="false" onAction="#loginAction" styleClass="log" text="Login" />
+                  <Button mnemonicParsing="false" onAction="#register" styleClass="new" text="Register" />
+                  <Button mnemonicParsing="false" onAction="#cancleAction" styleClass="exit" text="Cancle" />
               </buttons>
                <GridPane.margin>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </GridPane.margin>
             </ButtonBar>
-            <TextField fx:id="nameField" promptText="User name">
-               <GridPane.margin>
-                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-               </GridPane.margin>
-            </TextField>
-            <PasswordField fx:id="passwordField" promptText="Password" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-               </GridPane.margin>
-            </PasswordField>
          </children>
       </GridPane>
    </center>

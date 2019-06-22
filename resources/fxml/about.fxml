@@ -35,7 +35,7 @@
    <right>
       <ImageView fx:id="imgAbout" fitHeight="176.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../css/movie-png.png" />
+            <Image url="@../css/img/movie-png.png" />
          </image></ImageView>
    </right>
    <left>
