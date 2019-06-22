@@ -5,15 +5,35 @@
     -fx-control-inner-background: lightpink;
 }
 .dodaj{
-    -fx-graphic: url("add.png");
+    -fx-graphic: url("img/add.png");
     -fx-graphic-text-gap: 20px;
 
 }
 .brisi{
-    -fx-graphic: url("delete.png");
+    -fx-graphic: url("img/delete.png");
     -fx-graphic-text-gap: 20px;
 }
 .edit{
-    -fx-graphic: url("change.png");
+    -fx-graphic: url("img/change.png");
     -fx-graphic-text-gap: 20px;
+}
+.exit{
+    -fx-graphic: url("img/exit.png");
+    -fx-graphic-text-gap: 20px;
+}
+.new{
+    -fx-graphic: url("img/new.png");
+    -fx-graphic-text-gap: 20px;
+}
+.log{
+    -fx-graphic: url("img/log.png");
+    -fx-graphic-text-gap: 20px;
+}
+.image{
+    -fx-background-image: url("Background.jpg");
+    -fx-background-size: cover;
+}
+.image2{
+    -fx-background-image: url("main_background.jpg");
+    -fx-background-size: cover;
 }
