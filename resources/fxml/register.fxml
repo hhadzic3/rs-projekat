@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<?import java.net.URL?>
+<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0"
+          xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+          <!--fx:controller="ba.unsa.etf.rs.project.RegisterController"-->
+    <stylesheets>
+        <URL value="@/css/forme.css" />
+    </stylesheets>
+    <children>
+        <Label fx:id="lblTitle" text="REGISTER" textAlignment="CENTER" textOverrun="CLIP">
+            <font>
+                <Font name="Calibri Bold" size="36.0" />
+            </font>
+            <FlowPane.margin>
+                <Insets bottom="32.0" />
+            </FlowPane.margin>
+            <effect>
+                <InnerShadow />
+            </effect>
+        </Label>
+        <TextField fx:id="txtUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="160.0" promptText="Username" />
+        <PasswordField fx:id="txtPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="160.0" promptText="Password (minimum 6)">
+            <FlowPane.margin>
+                <Insets top="5.0" />
+            </FlowPane.margin></PasswordField>
+      <PasswordField fx:id="txtConfirmPassword" layoutX="230.0" layoutY="219.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="160.0" promptText="Confirm password">
+         <FlowPane.margin>
+            <Insets top="5.0" />
+         </FlowPane.margin>
+      </PasswordField>
+        <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#register" text="Register">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <FlowPane.margin>
+                <Insets top="5.0" />
+            </FlowPane.margin></Button>
+    </children>
+    <opaqueInsets>
+        <Insets bottom="5.0" left="5.0" right="5.0" />
+    </opaqueInsets>
+</FlowPane>
