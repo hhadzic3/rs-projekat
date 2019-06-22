@@ -29,13 +29,12 @@ public class LoginController {
 
         if(Exists(nameField.getText(),passwordField.getText())){
             Stage stage = new Stage();
-
             try {
-                //FXMLLoader loader
-                Parent root = FXMLLoader.load(getClass().getResource("/fxml/mainform.fxml"));
-                //MainController mainController = new MainController();
-                //loader.setController(mainController);
-                //root = loader.load();
+                MovieLibraryDAO model = MovieLibraryDAO.getInstance();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/mainform.fxml"));
+                MainController mainController = new MainController(model);
+                loader.setController(mainController);
+                Parent root = loader.load();
                 stage.setTitle("Movie Library");
                 stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
                 stage.show();

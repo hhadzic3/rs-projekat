@@ -1,11 +1,13 @@
 package ba.unsa.etf.rs.project;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Movie {
     private String title, actors, category, about,  director;
     private Integer length , id;
     private LocalDate publishDate;
+    public static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd. MM. yyyy");
 
 
     public Movie() {
@@ -98,6 +100,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return director + title + publishDate;
+        return director +" "+ title + " " + publishDate.format(DateTimeFormatter.ofPattern("dd. MM. yyyy"));
     }
 }

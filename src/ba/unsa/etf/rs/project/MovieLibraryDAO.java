@@ -69,7 +69,7 @@ public class MovieLibraryDAO {
         addMovie(new Movie("J. K. Rowling" , "Harry Potter" , "abcd" , 500 , LocalDate.now()));
     }*/
 
-    public void addMovie(Movie book){
+    public void addMovie(Movie movie){
         try {
             ResultSet rs = getIdMovies.executeQuery();
             int id = 1;
@@ -77,13 +77,13 @@ public class MovieLibraryDAO {
                 id = rs.getInt(1);
             }
             addMovie.setInt(1, id);
-            addMovie.setString(2, book.getDirector());
-            addMovie.setString(3, book.getTitle());
-            addMovie.setString(4 , book.getCategory());
-            addMovie.setInt(5, book.getLength());
-            addMovie.setString(6 , book.getAbout());
-            addMovie.setString(7 , book.getActors());
-            addMovie.setDate(8 , Date.valueOf(book.getPublishDate()));
+            addMovie.setString(2, movie.getDirector());
+            addMovie.setString(3, movie.getTitle());
+            addMovie.setString(4 , movie.getCategory());
+            addMovie.setInt(5, movie.getLength());
+            addMovie.setDate(6 , Date.valueOf(movie.getPublishDate()));
+            addMovie.setString(7 , movie.getAbout());
+            addMovie.setString(8 , movie.getActors());
             addMovie.executeUpdate();
         } catch (SQLException e) {
             e.getErrorCode();
@@ -118,7 +118,7 @@ public class MovieLibraryDAO {
                 int duz = result.getInt("length");
                 LocalDate publishDate = result.getDate("publishDate").toLocalDate();
 
-                movie = new Movie(id , author , title ,category ,duz ,about , actors, publishDate );
+                movie = new Movie( author , title ,category ,duz ,about , actors, publishDate );
                 movie.setId(id);
             }
         } catch (SQLException e) {
@@ -127,10 +127,10 @@ public class MovieLibraryDAO {
         return movie;
     }
 
-    public void deleteMovie(Movie book) {
+    public void deleteMovie(Movie movie) {
         try {
-            if (book != null) {
-                deleteMovies.setInt(1, book.getId());
+            if (movie != null) {
+                deleteMovies.setInt(1, movie.getId());
                 deleteMovies.executeUpdate();
             }
         } catch (SQLException e) {

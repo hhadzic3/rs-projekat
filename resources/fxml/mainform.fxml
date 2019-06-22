@@ -14,15 +14,16 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <!--fx:controller="ba.unsa.etf.rs.zadaca3.MainController"-->
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1">
+            <!--fx:controller="ba.unsa.etf.rs.project.MainController"-->
     <stylesheets>
         <URL value="@/css/forme.css" />
     </stylesheets>
    <center>
-      <TableView fx:id="tblBooks" prefHeight="324.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tblMovies" prefHeight="324.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="colAuthor" prefWidth="139.999966442585" text="Director" />
+          <TableColumn fx:id="colDirector" prefWidth="139.999966442585" text="Director" />
           <TableColumn fx:id="colTitle" minWidth="0.0" prefWidth="271.2000274658203" text="Title" />
             <TableColumn fx:id="colPublishDate" prefWidth="132.00006103515625" text="Publish date" />
         </columns>
