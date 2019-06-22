@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.2" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="ba.unsa.etf.rs.project.Models.Movie">
+    <void property="about">
+     <string>olee</string>
+    </void>
+    <void property="actors">
+     <string>falaa</string>
+    </void>
+    <void property="category">
+     <string>abcd</string>
+    </void>
+    <void property="director">
+     <string>Ivo Andrić</string>
+    </void>
+    <void property="id">
+     <int>1</int>
+    </void>
+    <void property="length">
+     <int>500</int>
+    </void>
+    <void property="title">
+     <string>Travnička hronika</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="ba.unsa.etf.rs.project.Models.Movie">
+    <void property="about">
+     <string>sali</string>
+    </void>
+    <void property="actors">
+     <string>mali</string>
+    </void>
+    <void property="category">
+     <string>abcd</string>
+    </void>
+    <void property="director">
+     <string>J. K. Rowlingg</string>
+    </void>
+    <void property="id">
+     <int>2</int>
+    </void>
+    <void property="length">
+     <int>500</int>
+    </void>
+    <void property="title">
+     <string>Harry Potter</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="ba.unsa.etf.rs.project.Models.Movie">
+    <void property="about">
+     <string>dobar pravoo</string>
+    </void>
+    <void property="actors">
+     <string>kloji</string>
+    </void>
+    <void property="category">
+     <string>akcija</string>
+    </void>
+    <void property="director">
+     <string>amiiijAASS</string>
+    </void>
+    <void property="id">
+     <int>3</int>
+    </void>
+    <void property="length">
+     <int>150</int>
+    </void>
+    <void property="title">
+     <string>Moringstar</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
