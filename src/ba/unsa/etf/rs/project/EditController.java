@@ -110,10 +110,6 @@ public class EditController {
         });
     }
 
-    private boolean isValidDate(LocalDate parse) {
-        if (parse.isBefore(LocalDate.now())) return true;
-        return false;
-    }
 
     public Movie getMovie() {
         return movie;
@@ -209,7 +205,5 @@ public class EditController {
 
         return false;
     }
-
-
 
 }
