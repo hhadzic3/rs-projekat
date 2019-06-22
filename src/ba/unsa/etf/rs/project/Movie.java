@@ -10,8 +10,7 @@ public class Movie {
     public static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd. MM. yyyy");
 
 
-    public Movie() {
-    }
+    public Movie() { }
 
     public Movie(int id, String author, String title, String category, int length, String about, String actors, LocalDate publishDate) {
         this.id = id;
@@ -24,6 +23,7 @@ public class Movie {
         this.publishDate = publishDate;
     }
     public Movie( String author, String title, String category, int length, String about, String actors, LocalDate publishDate) {
+        this.id = 0;
         this.title = title;
         this.actors = actors;
         this.category = category;

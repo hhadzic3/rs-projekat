@@ -116,7 +116,7 @@ public class MovieLibraryDAO {
                 String about = result.getString("about");
                 String actors = result.getString("actors");
                 int duz = result.getInt("length");
-                //LocalDate publishDate = result.getDate("publishDate").toLocalDate();
+                LocalDate publishDate = result.getDate("publishDate").toLocalDate();
                 //todo omoguciti datummmm!!
                 movie = new Movie( author , title ,category ,duz ,about , actors, LocalDate.now());
                 movie.setId(id);
