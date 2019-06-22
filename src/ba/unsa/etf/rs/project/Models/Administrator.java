@@ -1,4 +1,4 @@
-package ba.unsa.etf.rs.project;
+package ba.unsa.etf.rs.project.Models;
 
 public class Administrator {
     private String username , password;
@@ -27,4 +27,8 @@ public class Administrator {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return username + " " + password;
+    }
 }
