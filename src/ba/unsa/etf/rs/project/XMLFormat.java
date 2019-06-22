@@ -1,18 +1,10 @@
 package ba.unsa.etf.rs.project;
 
-import javafx.scene.control.Alert;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import ba.unsa.etf.rs.project.Models.Movie;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class XMLFormat {
@@ -20,6 +12,7 @@ public class XMLFormat {
 
     public static void write ( ArrayList<Movie> movies) {
         XMLEncoder encoder = null;
+        //todo zapis local date-a
         try {
             encoder = new XMLEncoder(new FileOutputStream("movies.xml"));
             encoder.writeObject(movies);

@@ -189,14 +189,18 @@ public class MainController {
     }
 
 
-    public void priceAction(ActionEvent actionEvent) {
-        Stage stage = null;
+    public void priceAction (ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        Parent root = null;
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/price.fxml"));
-            stage.setTitle("Price list");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/price.fxml"));
+            PriceController editController = new PriceController();
+            loader.setController(editController);
+            root = loader.load();
+            stage.setTitle("Price list of movies");
             stage.setScene(new Scene(root));
-            stage.show();
 
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
