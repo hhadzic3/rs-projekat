@@ -5,6 +5,8 @@ import ba.unsa.etf.rs.project.MovieLibraryDAO;
 import ba.unsa.etf.rs.project.XMLFormat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +30,7 @@ public class MainController {
     public TableColumn colDirector;
     public TableColumn colTitle;
     public TableColumn colPublishDate;
+    public TextField searchFld;
     private MovieLibraryDAO dao;
 
     private ObservableList<Movie> listMovies ;
@@ -56,6 +59,40 @@ public class MainController {
             };
             return cell;
         });
+
+        // 1. Wrap the ObservableList in a FilteredList (initially display all data).
+        FilteredList<Movie> filteredData = new FilteredList<>(listMovies, p -> true);
+
+        // 2. Set the filter Predicate whenever the filter changes.
+        searchFld.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(movie -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every movie with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (movie.getTitle().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                }
+                /*else if (movie.getCategory().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }*/
+                return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList.
+        SortedList<Movie> sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(tblMovies.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        tblMovies.setItems(sortedData);
+
     }
 
     // Akcije za menuBar
@@ -198,7 +235,7 @@ public class MainController {
             loader.setController(editController);
             root = loader.load();
             stage.setTitle("Price list of movies");
-            stage.setScene(new Scene(root));
+            stage.setScene(new Scene(root,750,450));
 
             stage.show();
         } catch (IOException e) {

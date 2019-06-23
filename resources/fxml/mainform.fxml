@@ -9,10 +9,14 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
             <!--fx:controller="ba.unsa.etf.rs.project.Controllers.MainController"-->
@@ -102,9 +106,19 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                   </Button>
+                  <TextField fx:id="searchFld" prefHeight="26.0" prefWidth="133.0" promptText="Search">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../css/img/find.png" />
+                     </image>
+                  </ImageView>
               </items>
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
                </VBox.margin>
             </ToolBar>
          </children>
