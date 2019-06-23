@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class MovieLibraryDAO {
     private static MovieLibraryDAO instance;
     private Connection conn;
-    private PreparedStatement getMovies, deleteMovies, addMovie, truncMovies, changeMovie, getIdMovies;
+    private PreparedStatement getMovies, deleteMovies, addMovie, truncMovies, changeMovie, getIdMovies,changeMovieBorrowed;
 
 
     public static MovieLibraryDAO getInstance() {
@@ -58,6 +58,7 @@ public class MovieLibraryDAO {
             changeMovie = conn.prepareStatement("UPDATE movies SET  director = ?, title = ?, category = ?, length = ? , " +
                     "about = ? , actors = ?, publishdate = ? ,borrowed=? where id = ?");
             getIdMovies = conn.prepareStatement("SELECT MAX(id)+1 FROM movies");
+            changeMovieBorrowed = conn.prepareStatement("UPDATE movies SET borrowed=? where id = ?");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -87,7 +88,6 @@ public class MovieLibraryDAO {
             addMovie.setDate(6 , Date.valueOf(movie.getPublishDate()));
             addMovie.setString(7 , movie.getAbout());
             addMovie.setString(8 , movie.getActors());
-            addMovie.setBoolean(9 , movie.getBorrowed());
             addMovie.executeUpdate();
         } catch (SQLException e) {
             e.getErrorCode();
@@ -108,14 +108,7 @@ public class MovieLibraryDAO {
         }
         return books;
     }
-    public String findUserName(String username){
-        for(Movie movie: this.getArrayOfMovies()){
-            if (movie.getTitle().toLowerCase().equals(username.toLowerCase())){
-                return movie.getTitle();
-            }
-        }
-        return " ";
-    }
+
 
     private Movie getMoviesQuery(ResultSet result) {
         Movie movie = null;
@@ -160,8 +153,16 @@ public class MovieLibraryDAO {
                 changeMovie.setString(6, movie.getActors());
                 changeMovie.setDate(7, Date.valueOf(movie.getPublishDate()));
                 changeMovie.setInt(8, movie.getId());
-                changeMovie.setBoolean(9, movie.getBorrowed());
                 changeMovie.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void updateMovieBorrowed(Movie movie){
+        try {
+            changeMovieBorrowed.setBoolean(1, movie.getBorrowed());
+            changeMovieBorrowed.setInt(2, movie.getId());
+            changeMovieBorrowed.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -236,7 +236,7 @@ public class MainController {
         Movie movie = tblMovies.getSelectionModel().getSelectedItem();
         if(movie.getBorrowed() != true) {
             movie.setBorrowed(true);
-            dao.updateMovie(movie);
+            dao.updateMovieBorrowed(movie);
             listMovies.setAll(dao.getArrayOfMovies());
         }
     }
@@ -245,7 +245,7 @@ public class MainController {
         Movie movie = tblMovies.getSelectionModel().getSelectedItem();
         if(movie.getBorrowed() != false) {
             movie.setBorrowed(false);
-            dao.updateMovie(movie);
+            dao.updateMovieBorrowed(movie);
             listMovies.setAll(dao.getArrayOfMovies());
         }
     }

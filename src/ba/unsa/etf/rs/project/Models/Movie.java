@@ -8,7 +8,7 @@ public class Movie {
     private Integer length , id;
     private LocalDate publishDate ;
     public static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd. MM. yyyy");
-    private Boolean borrowed;
+    private Boolean borrowed ;
 
 
 
