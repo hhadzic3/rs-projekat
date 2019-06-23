@@ -8,11 +8,13 @@ public class Movie {
     private Integer length , id;
     private LocalDate publishDate ;
     public static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd. MM. yyyy");
+    private Boolean borrowed;
+
 
 
     public Movie() { }
 
-    public Movie(int id, String author, String title, String category, int length, String about, String actors, LocalDate publishDate) {
+    public Movie(int id, String author, String title, String category, int length, String about, String actors, LocalDate publishDate,Boolean borrowed) {
         this.id = id;
         this.title = title;
         this.actors = actors;
@@ -21,8 +23,9 @@ public class Movie {
         this.director = author;
         this.length = length;
         this.publishDate = publishDate;
+        this.borrowed = borrowed;
     }
-    public Movie( String author, String title, String category, int length, String about, String actors, LocalDate publishDate) {
+    public Movie( String author, String title, String category, int length, String about, String actors, LocalDate publishDate,Boolean borrowed) {
         this.id = 0;
         this.title = title;
         this.actors = actors;
@@ -31,8 +34,16 @@ public class Movie {
         this.director = author;
         this.length = length;
         this.publishDate = publishDate;
+        this.borrowed = borrowed;
     }
 
+    public Boolean getBorrowed() {
+        return borrowed;
+    }
+
+    public void setBorrowed(Boolean borrowed) {
+        this.borrowed = borrowed;
+    }
 
     public String getTitle() {
         return title;
@@ -100,6 +111,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return director +" "+ title + " " + publishDate.format(DateTimeFormatter.ofPattern("dd. MM. yyyy"));
+        return director +" "+ title + " " +borrowed.booleanValue();
     }
 }

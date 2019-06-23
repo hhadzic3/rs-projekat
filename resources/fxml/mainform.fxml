@@ -28,7 +28,7 @@
         <columns>
           <TableColumn fx:id="colDirector" prefWidth="139.999966442585" sortable="true" text="Director" />
           <TableColumn fx:id="colTitle" minWidth="0.0" prefWidth="181.59999084472656" sortable="true" text="Title" />
-            <TableColumn fx:id="colPublishDate" prefWidth="166.4000244140625" sortable="true" text="Publish date" />
+            <TableColumn fx:id="colBorrowed" prefWidth="166.4000244140625" sortable="true" text="Borrowed" />
         </columns>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

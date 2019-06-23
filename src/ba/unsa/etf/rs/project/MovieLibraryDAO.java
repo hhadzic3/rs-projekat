@@ -1,6 +1,7 @@
 package ba.unsa.etf.rs.project;
 
 import ba.unsa.etf.rs.project.Models.Movie;
+import ba.unsa.etf.rs.project.Models.User;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -50,12 +51,12 @@ public class MovieLibraryDAO {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:videoLibrary.db");
 
-            getMovies = conn.prepareStatement("SELECT id, director, title, category, length,  about, actors,publishdate FROM movies ORDER BY id ASC ;");
-            addMovie = conn.prepareStatement("INSERT INTO movies values (?, ?, ?, ?, ?, ?, ? , ?)");
+            getMovies = conn.prepareStatement("SELECT id, director, title, category, length,  about, actors,publishdate,borrowed FROM movies ORDER BY id ASC ;");
+            addMovie = conn.prepareStatement("INSERT INTO movies values (?, ?, ?, ?, ?, ?, ? , ?,?)");
             deleteMovies = conn.prepareStatement("DELETE FROM movies where id = ?");
             truncMovies = conn.prepareStatement("DELETE FROM movies where 1=1");
             changeMovie = conn.prepareStatement("UPDATE movies SET  director = ?, title = ?, category = ?, length = ? , " +
-                    "about = ? , actors = ?, publishdate = ? where id = ?");
+                    "about = ? , actors = ?, publishdate = ? ,borrowed=? where id = ?");
             getIdMovies = conn.prepareStatement("SELECT MAX(id)+1 FROM movies");
 
         } catch (SQLException e) {
@@ -86,6 +87,7 @@ public class MovieLibraryDAO {
             addMovie.setDate(6 , Date.valueOf(movie.getPublishDate()));
             addMovie.setString(7 , movie.getAbout());
             addMovie.setString(8 , movie.getActors());
+            addMovie.setBoolean(9 , movie.getBorrowed());
             addMovie.executeUpdate();
         } catch (SQLException e) {
             e.getErrorCode();
@@ -106,6 +108,14 @@ public class MovieLibraryDAO {
         }
         return books;
     }
+    public String findUserName(String username){
+        for(Movie movie: this.getArrayOfMovies()){
+            if (movie.getTitle().toLowerCase().equals(username.toLowerCase())){
+                return movie.getTitle();
+            }
+        }
+        return " ";
+    }
 
     private Movie getMoviesQuery(ResultSet result) {
         Movie movie = null;
@@ -118,9 +128,10 @@ public class MovieLibraryDAO {
                 String about = result.getString("about");
                 String actors = result.getString("actors");
                 int duz = result.getInt("length");
+                boolean b = result.getBoolean("borrowed");
                 //LocalDate publishDate = result.getDate("publishDate").toLocalDate();
                 //todo omoguciti datummmm!!
-                movie = new Movie( author , title ,category ,duz ,about , actors, LocalDate.now());
+                movie = new Movie( author , title ,category ,duz ,about , actors, LocalDate.now(),b);
                 movie.setId(id);
             }
         } catch (SQLException e) {
@@ -149,6 +160,7 @@ public class MovieLibraryDAO {
                 changeMovie.setString(6, movie.getActors());
                 changeMovie.setDate(7, Date.valueOf(movie.getPublishDate()));
                 changeMovie.setInt(8, movie.getId());
+                changeMovie.setBoolean(9, movie.getBorrowed());
                 changeMovie.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

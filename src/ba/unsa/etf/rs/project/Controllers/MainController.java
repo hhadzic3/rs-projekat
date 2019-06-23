@@ -29,7 +29,7 @@ public class MainController {
     public TableView<Movie> tblMovies;
     public TableColumn colDirector;
     public TableColumn colTitle;
-    public TableColumn colPublishDate;
+    public TableColumn colBorrowed;
     public TextField searchFld;
     private MovieLibraryDAO dao;
 
@@ -46,19 +46,8 @@ public class MainController {
         tblMovies.setItems(listMovies);
         colDirector.setCellValueFactory(new PropertyValueFactory("director"));
         colTitle.setCellValueFactory(new PropertyValueFactory("title"));
-        colPublishDate.setCellValueFactory(new PropertyValueFactory("publishDate"));
-        colPublishDate.setCellFactory(column -> {
-            TableCell<MainController, LocalDate> cell = new TableCell<MainController, LocalDate>() {
-                private SimpleDateFormat format = new SimpleDateFormat("dd. MM. yyyy");
-                @Override
-                protected void updateItem(LocalDate item, boolean empty) {
-                    super.updateItem(item, empty);
-                    if(empty) setGraphic(null);
-                    else setGraphic(new Label(item.format(DateTimeFormatter.ofPattern("dd. MM. yyyy"))));
-                }
-            };
-            return cell;
-        });
+        colBorrowed.setCellValueFactory(new PropertyValueFactory("borrowed"));
+
 
         // 1. Wrap the ObservableList in a FilteredList (initially display all data).
         FilteredList<Movie> filteredData = new FilteredList<>(listMovies, p -> true);
@@ -244,11 +233,36 @@ public class MainController {
     }
 
     public void borrowAction(ActionEvent actionEvent) {
+        Movie movie = tblMovies.getSelectionModel().getSelectedItem();
+        if(movie.getBorrowed() != true) {
+            movie.setBorrowed(true);
+            dao.updateMovie(movie);
+            listMovies.setAll(dao.getArrayOfMovies());
+        }
     }
 
     public void returnAction(ActionEvent actionEvent) {
+        Movie movie = tblMovies.getSelectionModel().getSelectedItem();
+        if(movie.getBorrowed() != false) {
+            movie.setBorrowed(false);
+            dao.updateMovie(movie);
+            listMovies.setAll(dao.getArrayOfMovies());
+        }
     }
 
     public void listAction(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/list.fxml"));
+            ListController editController = new ListController();
+            loader.setController(editController);
+            root = loader.load();
+            stage.setTitle("List of users");
+            stage.setScene(new Scene(root,400,200));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
