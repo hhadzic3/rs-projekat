@@ -26,19 +26,19 @@
    <center>
       <TableView fx:id="tblMovies" prefHeight="324.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="colDirector" prefWidth="139.999966442585" text="Director" />
-          <TableColumn fx:id="colTitle" minWidth="0.0" prefWidth="271.2000274658203" text="Title" />
-            <TableColumn fx:id="colPublishDate" prefWidth="132.00006103515625" text="Publish date" />
+          <TableColumn fx:id="colDirector" prefWidth="139.999966442585" sortable="true" text="Director" />
+          <TableColumn fx:id="colTitle" minWidth="0.0" prefWidth="181.59999084472656" sortable="true" text="Title" />
+            <TableColumn fx:id="colPublishDate" prefWidth="166.4000244140625" sortable="true" text="Publish date" />
         </columns>
          <BorderPane.margin>
-            <Insets left="5.0" right="5.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
       </TableView>
    </center>
    <top>
       <VBox prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar>
+            <MenuBar style="-fx-background-color: lightgreen;">
               <menus>
                 <Menu text="_File">
                   <items>
@@ -86,10 +86,10 @@
                 </Menu>
               </menus>
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" top="5.0" />
+                  <Insets />
                </VBox.margin>
             </MenuBar>
-            <ToolBar VBox.vgrow="NEVER">
+            <ToolBar style="-fx-background-color: lightgreen;" VBox.vgrow="NEVER">
               <items>
                 <Button fx:id="tbAdd" mnemonicParsing="false" onAction="#actionAdd" styleClass="dodaj">
                      <padding>
@@ -118,27 +118,46 @@
                   </ImageView>
               </items>
                <VBox.margin>
-                  <Insets bottom="9.0" left="9.0" right="9.0" top="9.0" />
+                  <Insets />
                </VBox.margin>
             </ToolBar>
          </children>
       </VBox>
    </top>
    <bottom>
-      <ToolBar BorderPane.alignment="CENTER">
+      <ToolBar style="-fx-background-color: lightgreen;" BorderPane.alignment="CENTER">
          <items>
             <Label fx:id="statusMsg" text="" />
          </items>
          <BorderPane.margin>
-            <Insets left="5.0" right="5.0" />
+            <Insets />
          </BorderPane.margin>
       </ToolBar>
    </bottom>
    <right>
-      <Button mnemonicParsing="false" onAction="#priceAction" text="Price list" BorderPane.alignment="TOP_CENTER">
-         <BorderPane.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
-         </BorderPane.margin>
-      </Button>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: lightgreen;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#priceAction" styleClass="money">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#borrowAction" styleClass="borrow">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#returnAction" styleClass="return">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#listAction" styleClass="list">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
    </right>
 </BorderPane>

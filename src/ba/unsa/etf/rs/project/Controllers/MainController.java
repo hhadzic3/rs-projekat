@@ -235,11 +235,20 @@ public class MainController {
             loader.setController(editController);
             root = loader.load();
             stage.setTitle("Price list of movies");
-            stage.setScene(new Scene(root,750,450));
+            stage.setScene(new Scene(root,1100,550));
 
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void borrowAction(ActionEvent actionEvent) {
+    }
+
+    public void returnAction(ActionEvent actionEvent) {
+    }
+
+    public void listAction(ActionEvent actionEvent) {
     }
 }

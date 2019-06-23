@@ -29,6 +29,23 @@
     -fx-graphic: url("img/log.png");
     -fx-graphic-text-gap: 20px;
 }
+.list{
+    -fx-graphic: url("img/list.png");
+    -fx-graphic-text-gap: 20px;
+}
+.return{
+    -fx-graphic: url("img/return.png");
+    -fx-graphic-text-gap: 20px;
+}
+.borrow{
+    -fx-graphic: url("img/borrow.png");
+    -fx-graphic-text-gap: 20px;
+}
+.money{
+    -fx-graphic: url("img/money.png");
+    -fx-graphic-text-gap: 20px;
+}
+
 .image{
     -fx-background-image: url("img/Background.jpg");
     -fx-background-size: cover;
