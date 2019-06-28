@@ -2,6 +2,8 @@ package ba.unsa.etf.rs.project.Models;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
@@ -36,6 +38,17 @@ class UserTest {
         String result = "" + k;
         String expected = "a b";
         assertEquals(expected, result);
+    }
+    @Test
+    void idTest() {
+        User k = new User("a","b");
+        assertEquals(0, k.getId());
+    }
+
+    @Test
+    void idCtorTest() {
+        User k = new User(12,"a","b");
+        assertEquals(12, k.getId());
     }
 
 }
