@@ -1,10 +1,8 @@
 package ba.unsa.etf.rs.project.Controllers;
 
-import ba.unsa.etf.rs.project.Main.Movie;
+import ba.unsa.etf.rs.project.Models.Movie;
 import ba.unsa.etf.rs.project.DAO.MovieLibraryDAO;
 import ba.unsa.etf.rs.project.XML.XMLFormat;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;

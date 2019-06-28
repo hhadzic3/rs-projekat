@@ -1,6 +1,6 @@
 package ba.unsa.etf.rs.project.DAO;
 
-import ba.unsa.etf.rs.project.Main.Movie;
+import ba.unsa.etf.rs.project.Models.Movie;
 
 import java.sql.*;
 import java.time.LocalDate;
