@@ -1,4 +1,4 @@
-package ba.unsa.etf.rs.project;
+package ba.unsa.etf.rs.project.DAO;
 
 import ba.unsa.etf.rs.project.Models.Administrator;
 

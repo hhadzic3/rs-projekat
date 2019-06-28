@@ -1,6 +1,6 @@
-package ba.unsa.etf.rs.project;
+package ba.unsa.etf.rs.project.XML;
 
-import ba.unsa.etf.rs.project.Models.Movie;
+import ba.unsa.etf.rs.project.Main.Movie;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;

@@ -38,7 +38,7 @@
    <top>
       <VBox prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar style="-fx-background-color: #b2b4ee;">
+            <MenuBar style="-fx-background-color: #82c890;">
               <menus>
                 <Menu text="_File">
                   <items>
@@ -89,7 +89,7 @@
                   <Insets />
                </VBox.margin>
             </MenuBar>
-            <ToolBar style="-fx-background-color: #b2b4ee;" VBox.vgrow="NEVER">
+            <ToolBar style="-fx-background-color: #82c890;" VBox.vgrow="NEVER">
               <items>
                 <Button fx:id="tbAdd" mnemonicParsing="false" onAction="#actionAdd" styleClass="dodaj">
                      <padding>
@@ -125,7 +125,7 @@
       </VBox>
    </top>
    <bottom>
-      <ToolBar style="-fx-background-color: #b2b4ee;" BorderPane.alignment="CENTER">
+      <ToolBar style="-fx-background-color: #82c890;" BorderPane.alignment="CENTER">
          <items>
             <Label fx:id="statusMsg" text="">
                <font>
@@ -138,7 +138,7 @@
       </ToolBar>
    </bottom>
    <right>
-      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #b2b4ee;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #82c890;" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#priceAction" styleClass="money">
                <VBox.margin>

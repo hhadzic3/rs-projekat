@@ -1,8 +1,8 @@
 package ba.unsa.etf.rs.project.Controllers;
 
-import ba.unsa.etf.rs.project.Models.Movie;
-import ba.unsa.etf.rs.project.MovieLibraryDAO;
-import ba.unsa.etf.rs.project.XMLFormat;
+import ba.unsa.etf.rs.project.Main.Movie;
+import ba.unsa.etf.rs.project.DAO.MovieLibraryDAO;
+import ba.unsa.etf.rs.project.XML.XMLFormat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -17,9 +17,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Optional;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;

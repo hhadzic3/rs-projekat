@@ -1,10 +1,7 @@
 package ba.unsa.etf.rs.project.Controllers;
 
-import ba.unsa.etf.rs.project.Models.Movie;
 import ba.unsa.etf.rs.project.Models.User;
-import ba.unsa.etf.rs.project.MovieLibraryDAO;
-import ba.unsa.etf.rs.project.UserDAO;
-import javafx.beans.property.SimpleStringProperty;
+import ba.unsa.etf.rs.project.DAO.UserDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
