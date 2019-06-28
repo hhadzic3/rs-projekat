@@ -36,7 +36,7 @@ class UserTest {
     void toStringTest() {
         User k = new User("a","b");
         String result = "" + k;
-        String expected = "a b";
+        String expected = "a";
         assertEquals(expected, result);
     }
     @Test

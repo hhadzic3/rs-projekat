@@ -108,7 +108,8 @@ public class Movie {
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return director +" "+ title + " " +borrowed.booleanValue();
     }
 }
