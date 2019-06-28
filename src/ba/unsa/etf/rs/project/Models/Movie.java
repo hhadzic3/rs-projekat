@@ -10,8 +10,6 @@ public class Movie {
     public static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd. MM. yyyy");
     private Boolean borrowed ;
 
-
-
     public Movie() { }
 
     public Movie(int id, String author, String title, String category, int length, String about, String actors, LocalDate publishDate,Boolean borrowed) {
