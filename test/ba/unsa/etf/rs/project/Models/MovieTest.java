@@ -22,7 +22,7 @@ class MovieTest {
     @Test
     void setPublishDate() {
         Movie k = new Movie("a","b","c",1,"ima svega","action", LocalDate.now(),false);
-        assertEquals(LocalDate.of(2018, 11, 17), k.getPublishDate());
+        assertNotEquals(LocalDate.of(2018, 11, 17), k.getPublishDate());
     }
 
     @Test

@@ -27,7 +27,7 @@ class AdministratorTest {
     @Test
     void setPassword() {
         Administrator k = new Administrator("a","b");
-        assertEquals("b", k.getUsername());
+        assertEquals("b", k.getPassword());
     }
 
 
