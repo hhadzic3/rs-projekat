@@ -3,6 +3,8 @@ package ba.unsa.etf.rs.project.Controllers;
 import ba.unsa.etf.rs.project.Main.Movie;
 import ba.unsa.etf.rs.project.DAO.MovieLibraryDAO;
 import ba.unsa.etf.rs.project.XML.XMLFormat;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -44,7 +46,6 @@ public class MainController {
         colDirector.setCellValueFactory(new PropertyValueFactory("director"));
         colTitle.setCellValueFactory(new PropertyValueFactory("title"));
         colBorrowed.setCellValueFactory(new PropertyValueFactory("borrowed"));
-
 
         // 1. Wrap the ObservableList in a FilteredList (initially display all data).
         FilteredList<Movie> filteredData = new FilteredList<>(listMovies, p -> true);
