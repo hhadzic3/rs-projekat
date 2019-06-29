@@ -81,7 +81,7 @@ public class ListController {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            daoUser.removeUser(user.getName());
+            daoUser.removeUser(user);
             list2.setAll(daoUser.listUsers());
         }
     }

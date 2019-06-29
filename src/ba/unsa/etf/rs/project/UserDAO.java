@@ -37,11 +37,12 @@ public class UserDAO {
             e.printStackTrace();
         }
     }
-    PreparedStatement getIdUsers;
+    PreparedStatement getIdUsers,deleteUser;
     public UserDAO(){
         try {
             this.connection = DriverManager.getConnection("jdbc:sqlite:videoLibrary.db");
             getIdUsers =connection.prepareStatement("SELECT MAX(id)+1 FROM users");
+            deleteUser = connection.prepareStatement("DELETE FROM users where id = ?");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -72,7 +73,7 @@ public class UserDAO {
         }
 
     }
-    public boolean removeUser(String username){
+    public void removeUser(User user){
         try {
             if (user != null) {
                 deleteUser.setInt(1, user.getId());
