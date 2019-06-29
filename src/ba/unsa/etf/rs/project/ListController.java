@@ -1,7 +1,5 @@
-package ba.unsa.etf.rs.project.Controllers;
+package ba.unsa.etf.rs.project;
 
-import ba.unsa.etf.rs.project.Models.User;
-import ba.unsa.etf.rs.project.DAO.UserDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

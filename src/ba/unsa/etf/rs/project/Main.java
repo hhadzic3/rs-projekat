@@ -1,4 +1,4 @@
-package ba.unsa.etf.rs.project.Main;
+package ba.unsa.etf.rs.project;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ba.unsa.etf.rs.project</OriginalElement>
+  <nodes>
+    <node x="163.0" y="208.0">ba.unsa.etf.rs.project.EditController</node>
+    <node x="304.0" y="208.0">ba.unsa.etf.rs.project.XMLFormat</node>
+    <node x="570.6614229024945" y="357.0">ba.unsa.etf.rs.project.RegisterController</node>
+    <node x="601.6815476190477" y="208.0">ba.unsa.etf.rs.project.ListController</node>
+    <node x="432.0" y="208.0">ba.unsa.etf.rs.project.PriceController</node>
+    <node x="677.7529761904761" y="466.0">ba.unsa.etf.rs.project.LoginController</node>
+    <node x="818.6615173847317" y="357.0">ba.unsa.etf.rs.project.AdministratorDAO</node>
+    <node x="347.25" y="357.0">ba.unsa.etf.rs.project.MainController</node>
+    <node x="184.0" y="376.0">ba.unsa.etf.rs.project.Main</node>
+    <node x="739.6815476190477" y="208.0">ba.unsa.etf.rs.project.Administrator</node>
+    <node x="0.0" y="208.0">ba.unsa.etf.rs.project.MovieLibraryDAO</node>
+    <node x="580.0156840513985" y="0.0">ba.unsa.etf.rs.project.User</node>
+    <node x="653.9315476190477" y="89.0">ba.unsa.etf.rs.project.UserDAO</node>
+    <node x="168.9323507180651" y="89.0">ba.unsa.etf.rs.project.Movie</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ba.unsa.etf.rs.project.MainController" target="ba.unsa.etf.rs.project.EditController">
+      <point x="-15.875" y="-14.5" />
+      <point x="394.875" y="287.0" />
+      <point x="253.75" y="287.0" />
+      <point x="30.25" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.MainController" target="ba.unsa.etf.rs.project.PriceController">
+      <point x="15.875" y="-14.5" />
+      <point x="426.625" y="267.0" />
+      <point x="526.5" y="267.0" />
+      <point x="31.5" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.MainController" target="ba.unsa.etf.rs.project.XMLFormat">
+      <point x="-5.291666666666686" y="-14.5" />
+      <point x="405.45833333333337" y="277.0" />
+      <point x="358.0" y="277.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.EditController" target="ba.unsa.etf.rs.project.Movie">
+      <point x="-40.33333333333337" y="-14.5" />
+      <point x="183.16666666666663" y="188.0" />
+      <point x="200.04346182917618" y="188.0" />
+      <point x="-8.888888888888914" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.MainController" target="ba.unsa.etf.rs.project.ListController">
+      <point x="47.625" y="-14.5" />
+      <point x="458.375" y="297.0" />
+      <point x="631.1815476190477" y="297.0" />
+      <point x="-29.5" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.LoginController" target="ba.unsa.etf.rs.project.RegisterController">
+      <point x="-6.5" y="-14.5" />
+      <point x="736.2529761904761" y="406.0" />
+      <point x="678.6614229024945" y="406.0" />
+      <point x="36.0" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.MainController" target="ba.unsa.etf.rs.project.Movie">
+      <point x="37.041666666666686" y="-14.5" />
+      <point x="447.79166666666674" y="287.0" />
+      <point x="591.1815476190477" y="287.0" />
+      <point x="591.1815476190477" y="148.0" />
+      <point x="244.48790627362064" y="148.0" />
+      <point x="35.55555555555554" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.ListController" target="ba.unsa.etf.rs.project.User">
+      <point x="-44.25" y="-14.5" />
+      <point x="616.4315476190477" y="138.0" />
+      <point x="568.8013038548754" y="138.0" />
+      <point x="568.8013038548754" y="69.0" />
+      <point x="588.8906840513985" y="69.0" />
+      <point x="-26.625" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.RegisterController" target="ba.unsa.etf.rs.project.Administrator">
+      <point x="48.0" y="-14.5" />
+      <point x="690.6614229024945" y="337.0" />
+      <point x="782.5386904761906" y="337.0" />
+      <point x="-17.14285714285711" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.LoginController" target="ba.unsa.etf.rs.project.AdministratorDAO">
+      <point x="32.5" y="-14.5" />
+      <point x="775.2529761904761" y="426.0" />
+      <point x="891.6615173847317" y="426.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.LoginController" target="ba.unsa.etf.rs.project.MainController">
+      <point x="-45.5" y="-14.5" />
+      <point x="697.2529761904761" y="436.0" />
+      <point x="379.0" y="436.0" />
+      <point x="-31.75" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.MainController" target="ba.unsa.etf.rs.project.MovieLibraryDAO">
+      <point x="-58.20833333333337" y="-14.5" />
+      <point x="352.54166666666663" y="327.0" />
+      <point x="71.0" y="327.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.XMLFormat" target="ba.unsa.etf.rs.project.Movie">
+      <point x="0.0" y="-14.5" />
+      <point x="358.0" y="168.0" />
+      <point x="226.71012849584287" y="168.0" />
+      <point x="17.77777777777777" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.ListController" target="ba.unsa.etf.rs.project.UserDAO">
+      <point x="14.75" y="-14.5" />
+      <point x="675.4315476190477" y="188.0" />
+      <point x="677.9315476190477" y="188.0" />
+      <point x="-24.0" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.LoginController" target="ba.unsa.etf.rs.project.Administrator">
+      <point x="6.5" y="-14.5" />
+      <point x="749.2529761904761" y="406.0" />
+      <point x="808.1615173847317" y="406.0" />
+      <point x="808.1615173847317" y="337.0" />
+      <point x="799.6815476190477" y="337.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.MovieLibraryDAO" target="ba.unsa.etf.rs.project.Movie">
+      <point x="-35.5" y="-14.5" />
+      <point x="35.5" y="158.0" />
+      <point x="173.37679516250955" y="158.0" />
+      <point x="-35.55555555555554" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.UserDAO" target="ba.unsa.etf.rs.project.User">
+      <point x="-24.0" y="-14.5" />
+      <point x="677.9315476190477" y="59.0" />
+      <point x="624.3906840513985" y="59.0" />
+      <point x="8.875" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.AdministratorDAO" target="ba.unsa.etf.rs.project.Administrator">
+      <point x="36.5" y="-14.5" />
+      <point x="928.1615173847317" y="327.0" />
+      <point x="833.9672619047619" y="327.0" />
+      <point x="34.285714285714334" y="14.5" />
+    </edge>
+    <edge source="ba.unsa.etf.rs.project.LoginController" target="ba.unsa.etf.rs.project.MovieLibraryDAO">
+      <point x="-58.5" y="-14.5" />
+      <point x="684.2529761904761" y="446.0" />
+      <point x="76.75009448223739" y="446.0" />
+      <point x="76.75009448223739" y="337.0" />
+      <point x="23.666666666666686" y="337.0" />
+      <point x="-47.333333333333314" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="371.5" y="284.5" />
+  <SelectedNodes>
+    <node>ba.unsa.etf.rs.project.Main</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

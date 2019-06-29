@@ -2,7 +2,7 @@
 <java version="11.0.2" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
-   <object class="ba.unsa.etf.rs.project.Models.Movie">
+   <object class="ba.unsa.etf.rs.project.Movie">
     <void property="about">
      <string>olee</string>
     </void>
@@ -27,7 +27,7 @@
    </object>
   </void>
   <void method="add">
-   <object class="ba.unsa.etf.rs.project.Models.Movie">
+   <object class="ba.unsa.etf.rs.project.Movie">
     <void property="about">
      <string>sali</string>
     </void>
@@ -52,7 +52,7 @@
    </object>
   </void>
   <void method="add">
-   <object class="ba.unsa.etf.rs.project.Models.Movie">
+   <object class="ba.unsa.etf.rs.project.Movie">
     <void property="about">
      <string>dobar pravoo</string>
     </void>

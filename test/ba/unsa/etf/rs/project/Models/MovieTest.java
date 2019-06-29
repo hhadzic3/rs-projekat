@@ -1,5 +1,6 @@
 package ba.unsa.etf.rs.project.Models;
 
+import ba.unsa.etf.rs.project.Movie;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

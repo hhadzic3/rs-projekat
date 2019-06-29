@@ -1,6 +1,4 @@
-package ba.unsa.etf.rs.project.DAO;
-
-import ba.unsa.etf.rs.project.Models.User;
+package ba.unsa.etf.rs.project;
 
 import java.sql.*;
 import java.util.ArrayList;

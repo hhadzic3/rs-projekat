@@ -1,4 +1,4 @@
-package ba.unsa.etf.rs.project.Models;
+package ba.unsa.etf.rs.project;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

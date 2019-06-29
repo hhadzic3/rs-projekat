@@ -1,4 +1,4 @@
-package ba.unsa.etf.rs.project.Models;
+package ba.unsa.etf.rs.project;
 
 public class Administrator {
     private String username , password;

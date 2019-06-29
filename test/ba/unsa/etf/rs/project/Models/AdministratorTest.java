@@ -1,8 +1,7 @@
 package ba.unsa.etf.rs.project.Models;
 
+import ba.unsa.etf.rs.project.Administrator;
 import org.junit.jupiter.api.Test;
-
-import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 

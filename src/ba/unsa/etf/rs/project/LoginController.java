@@ -1,8 +1,5 @@
-package ba.unsa.etf.rs.project.Controllers;
+package ba.unsa.etf.rs.project;
 
-import ba.unsa.etf.rs.project.DAO.AdministratorDAO;
-import ba.unsa.etf.rs.project.DAO.MovieLibraryDAO;
-import ba.unsa.etf.rs.project.Models.Administrator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

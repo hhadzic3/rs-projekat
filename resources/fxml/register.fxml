@@ -13,7 +13,7 @@
 <FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
           orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0"
           xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-          <!--fx:controller="ba.unsa.etf.rs.project.Controllers.RegisterController"-->
+          <!--fx:controller="ba.unsa.etf.rs.project.RegisterController"-->
     <stylesheets>
         <URL value="@/css/forme.css" />
     </stylesheets>

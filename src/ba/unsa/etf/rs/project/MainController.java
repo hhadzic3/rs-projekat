@@ -1,8 +1,5 @@
-package ba.unsa.etf.rs.project.Controllers;
+package ba.unsa.etf.rs.project;
 
-import ba.unsa.etf.rs.project.Models.Movie;
-import ba.unsa.etf.rs.project.DAO.MovieLibraryDAO;
-import ba.unsa.etf.rs.project.XML.XMLFormat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
