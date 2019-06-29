@@ -1,3 +1,3 @@
 # Class Diagram
  ## movieLibrary
-[(resources/diagram_img/diagram.png)]
+[](resources/diagram_img/diagram.png)

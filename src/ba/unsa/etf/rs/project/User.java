@@ -3,19 +3,29 @@ package ba.unsa.etf.rs.project;
 public class User {
     private int id;
     private String name , surname;
-
+    private int postalNumber;
 
     public User() {}
 
-    public User(String name, String surname) {
+    public User(String name, String surname,int num) {
         this.name = name;
         this.surname = surname;
+        postalNumber = num;
     }
 
-    public User(int id, String name, String surname) {
+    public User(int id, String name, String surname,int num) {
         this.id = id;
         this.name = name;
         this.surname = surname;
+        postalNumber = num;
+    }
+
+    public int getPostalNumber() {
+        return postalNumber;
+    }
+
+    public void setPostalNumber(int postalNumber) {
+        this.postalNumber = postalNumber;
     }
 
     public int getId() {
