@@ -48,7 +48,7 @@ public class UserDAO {
     }
 
     public boolean addUser(User user){
-        String sql = "INSERT INTO users (id ,name, password) VALUES (?,?, ?)";
+        String sql = "INSERT INTO users (id ,name, surname,postal_number) VALUES (?,?,?,?)";
 
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
@@ -61,6 +61,7 @@ public class UserDAO {
             preparedStatement.setInt(1,id);
             preparedStatement.setString(2, user.getName());
             preparedStatement.setString(3, user.getSurname());
+            preparedStatement.setInt(4, user.getPostalNumber());
 
             preparedStatement.execute();
             preparedStatement.close();
@@ -93,17 +94,9 @@ public class UserDAO {
         return " ";
     }
 
-    public String findUserSur(String surname){
-        for(User user: this.listUsers()){
-            if (user.getName().toLowerCase().equals(surname.toLowerCase())){
-                return user.getSurname();
-            }
-        }
-        return " ";
-    }
 
     public List<User> listUsers(){
-        String sql = "SELECT id,name, surname FROM users";
+        String sql = "SELECT id,name, surname,postal_number FROM users";
         List<User> userList = new ArrayList<>();
         try {
             ResultSet rs = this.connection.prepareStatement(sql).executeQuery();
@@ -112,7 +105,7 @@ public class UserDAO {
                 user.setId(rs.getInt(1));
                 user.setName(rs.getString(2));
                 user.setSurname(rs.getString(3));
-
+                user.setPostalNumber(rs.getInt(4));
                 userList.add(user);
             }
         } catch (SQLException e) {

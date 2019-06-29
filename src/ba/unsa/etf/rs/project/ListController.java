@@ -44,44 +44,6 @@ public class ListController {
     }
 
     public void AddAction(ActionEvent actionEvent) {
-        // Tek ako je sve ostalo ok validiramo poštanski broj jer je to najsporije
-        /*try {
-            URL lokacija = new URL("http://c9.etf.unsa.ba/proba/postanskiBroj.php?postanskiBroj=" + postalNumberField.getText());
-            postalNumberField.getStyleClass().removeAll("poljeIspravno");
-            postalNumberField.getStyleClass().removeAll("poljeNijeIspravno");
-            postalNumberField.getStyleClass().add("poljeProvjeraUToku");
-            new Thread(() -> {
-                String json = "", line = null;
-                BufferedReader ulaz = null;
-                try {
-                    ulaz = new BufferedReader(new InputStreamReader(lokacija.openStream(),
-                            StandardCharsets.UTF_8));
-                    while ((line = ulaz.readLine()) != null)
-                        json = json + line;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                if (!json.equals("OK")) {
-                    Platform.runLater( () -> {
-                        postalNumberField.getStyleClass().removeAll("poljeProvjeraUToku");
-                        postalNumberField.getStyleClass().add("poljeNijeIspravno");
-                    });
-
-                } else {
-                    dodajIzmijeniVlasnika(mjestoRodjenjaObj, mjestoPrebivalista);
-
-                    Platform.runLater( () -> {
-                        postalNumberField.getStyleClass().removeAll("poljeProvjeraUToku");
-                        postalNumberField.getStyleClass().add("poljeIspravno");
-                        Stage stage = (Stage) placeOfBirth.getScene().getWindow();
-                        stage.close();
-                    });
-                }
-            }).start();
-        } catch (Exception e) {
-            // Do nothing
-        }*/
         Stage stage = new Stage();
         Parent root = null;
         try {
@@ -97,8 +59,8 @@ public class ListController {
             stage.setOnHiding( event -> {
                 User user = editController.getUsers();
                 if (user != null) {
-                    dao.addMovie(user);
-                    listMovies.setAll(dao.getArrayOfMovies());
+                    daoUser.addUser(user);
+                    list2.setAll(daoUser.listUsers());
                 }
             } );
         } catch (IOException e) {
@@ -119,8 +81,8 @@ public class ListController {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            dao.deleteMovie(user);
-            listMovies.setAll(dao.getArrayOfMovies());
+            daoUser.removeUser(user.getName());
+            list2.setAll(daoUser.listUsers());
         }
     }
 }
