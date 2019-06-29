@@ -73,15 +73,13 @@ public class UserDAO {
 
     }
     public boolean removeUser(String username){
-        String sql = "DELETE FROM users WHERE name=" + username;
         try {
-            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-            return true;
+            if (user != null) {
+                deleteUser.setInt(1, user.getId());
+                deleteUser.executeUpdate();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
     }
 
