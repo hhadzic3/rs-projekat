@@ -36,6 +36,19 @@ public class EditController {
         this.movie = movie;
     }
 
+    @FXML
+    public void initialize() {
+        if (movie != null) {
+            fldDirector.setText(movie.getDirector());
+            fldTitle.setText(movie.getTitle());
+            fldCategory.setText(movie.getCategory());
+            fldAbout.setText(movie.getAbout());
+            fldActors.setText(movie.getActors());
+            spinLength.setPromptText(String.valueOf(movie.getLength()));
+            dpPublishDate.setValue(movie.getPublishDate());
+
+        }
+    }
 
 
     public Movie getMovie() {

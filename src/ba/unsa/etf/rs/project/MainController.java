@@ -175,9 +175,9 @@ public class MainController {
             stage.show();
 
             stage.setOnHiding( event -> {
-                Movie newBook = editController.getMovie();
-                if (newBook != null) {
-                    dao.updateMovie(newBook);
+                Movie newMovie = editController.getMovie();
+                if (newMovie != null) {
+                    dao.updateMovie(newMovie);
                     listMovies.setAll(dao.getArrayOfMovies());
                     statusMsg.setText("Movie edited.");
                 }
