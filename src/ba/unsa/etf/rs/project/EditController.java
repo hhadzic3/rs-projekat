@@ -46,7 +46,6 @@ public class EditController {
             fldActors.setText(movie.getActors());
             spinLength.setPromptText(String.valueOf(movie.getLength()));
             dpPublishDate.setValue(movie.getPublishDate());
-
         }
     }
 

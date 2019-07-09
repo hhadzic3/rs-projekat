@@ -10,7 +10,6 @@ public class XMLFormat {
 
     public static void write ( ArrayList<Movie> movies) {
         XMLEncoder encoder = null;
-        //todo zapis local date-a
         try {
             encoder = new XMLEncoder(new FileOutputStream("movies.xml"));
             encoder.writeObject(movies);
@@ -28,6 +27,5 @@ public class XMLFormat {
         decoder.close();
         return movies;
     }
-
 
 }

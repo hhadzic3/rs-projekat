@@ -59,16 +59,11 @@ public class MovieLibraryDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            //defaultData();
+
         }
     }
 
-/*
-    public void defaultData() {
-        addMovie(new Movie("Meša Selimović" , "Tvrđava" , "abcd" , 500 , LocalDate.now()));
-        addMovie(new Movie("Ivo Andrić" , "Travnička hronika" , "abcd" , 500 , LocalDate.now()));
-        addMovie(new Movie("J. K. Rowling" , "Harry Potter" , "abcd" , 500 , LocalDate.now()));
-    }*/
+
 
     public void addMovie(Movie movie){
         try {
@@ -119,9 +114,9 @@ public class MovieLibraryDAO {
                 String actors = result.getString("actors");
                 int duz = result.getInt("length");
                 boolean b = result.getBoolean("borrowed");
-                //LocalDate publishDate = result.getDate("publishDate").toLocalDate();
-                //todo omoguciti datummmm!!
-                movie = new Movie( author , title ,category ,duz ,about , actors, LocalDate.now(),b);
+                LocalDate publishDate = result.getDate("publishDate").toLocalDate();
+
+                movie = new Movie( author , title ,category ,duz ,about , actors, publishDate,b);
                 movie.setId(id);
             }
         } catch (SQLException e) {
