@@ -4,35 +4,13 @@
   <void method="add">
    <object class="ba.unsa.etf.rs.project.Movie">
     <void property="about">
-     <string>olee</string>
-    </void>
-    <void property="actors">
-     <string>falaa</string>
-    </void>
-    <void property="category">
-     <string>abcd</string>
-    </void>
-    <void property="director">
-     <string>Ivo Andrić</string>
-    </void>
-    <void property="id">
-     <int>1</int>
-    </void>
-    <void property="length">
-     <int>500</int>
-    </void>
-    <void property="title">
-     <string>Travnička hronika</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="ba.unsa.etf.rs.project.Movie">
-    <void property="about">
      <string>sali</string>
     </void>
     <void property="actors">
      <string>mali</string>
+    </void>
+    <void property="borrowed">
+     <boolean>false</boolean>
     </void>
     <void property="category">
      <string>abcd</string>
@@ -41,10 +19,15 @@
      <string>J. K. Rowlingg</string>
     </void>
     <void property="id">
-     <int>2</int>
+     <int>1</int>
     </void>
     <void property="length">
      <int>500</int>
+    </void>
+    <void property="publishDate">
+     <object class="java.time.LocalDate" method="parse">
+      <string>2019-06-23</string>
+     </object>
     </void>
     <void property="title">
      <string>Harry Potter</string>
@@ -54,25 +37,66 @@
   <void method="add">
    <object class="ba.unsa.etf.rs.project.Movie">
     <void property="about">
-     <string>dobar pravoo</string>
+     <string>osvecivanje</string>
     </void>
     <void property="actors">
-     <string>kloji</string>
+     <string>poznatii</string>
+    </void>
+    <void property="borrowed">
+     <boolean>false</boolean>
     </void>
     <void property="category">
      <string>akcija</string>
     </void>
     <void property="director">
-     <string>amiiijAASS</string>
+     <string>Amerikanac</string>
     </void>
     <void property="id">
-     <int>3</int>
+     <int>4</int>
     </void>
     <void property="length">
-     <int>150</int>
+     <int>125</int>
+    </void>
+    <void property="publishDate">
+     <object class="java.time.LocalDate" method="parse">
+      <string>2019-06-23</string>
+     </object>
     </void>
     <void property="title">
-     <string>Moringstar</string>
+     <string>Kapetan amerika</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="ba.unsa.etf.rs.project.Movie">
+    <void property="about">
+     <string>Devil comes from the hell</string>
+    </void>
+    <void property="actors">
+     <string>Morningstar,Calxy</string>
+    </void>
+    <void property="borrowed">
+     <boolean>false</boolean>
+    </void>
+    <void property="category">
+     <string>Comedy</string>
+    </void>
+    <void property="director">
+     <string>L. Merlin</string>
+    </void>
+    <void property="id">
+     <int>5</int>
+    </void>
+    <void property="length">
+     <int>140</int>
+    </void>
+    <void property="publishDate">
+     <object class="java.time.LocalDate" method="parse">
+      <string>2019-07-03</string>
+     </object>
+    </void>
+    <void property="title">
+     <string>Lucifer </string>
     </void>
    </object>
   </void>
