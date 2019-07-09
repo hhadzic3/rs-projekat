@@ -53,7 +53,7 @@ public class MovieLibraryDAO {
             deleteMovies = conn.prepareStatement("DELETE FROM movies where id = ?");
             truncMovies = conn.prepareStatement("DELETE FROM movies where 1=1");
             changeMovie = conn.prepareStatement("UPDATE movies SET  director = ?, title = ?, category = ?, length = ? , " +
-                    "about = ? , actors = ?, publishdate = ? ,borrowed=? where id = ?");
+                    "about = ? , actors = ?, publishdate = ? where id = ?");
             getIdMovies = conn.prepareStatement("SELECT MAX(id)+1 FROM movies");
             changeMovieBorrowed = conn.prepareStatement("UPDATE movies SET borrowed=? where id = ?");
 
@@ -62,8 +62,6 @@ public class MovieLibraryDAO {
 
         }
     }
-
-
 
     public void addMovie(Movie movie){
         try {
@@ -137,6 +135,7 @@ public class MovieLibraryDAO {
     }
     public void updateMovie(Movie movie) {
         try {
+                changeMovie.setInt(8, movie.getId());
                 changeMovie.setString(1,movie.getDirector());
                 changeMovie.setString(2, movie.getTitle());
                 changeMovie.setString(3, movie.getCategory());
@@ -144,7 +143,7 @@ public class MovieLibraryDAO {
                 changeMovie.setString(5, movie.getAbout());
                 changeMovie.setString(6, movie.getActors());
                 changeMovie.setDate(7, Date.valueOf(movie.getPublishDate()));
-                changeMovie.setInt(8, movie.getId());
+
                 changeMovie.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -44,11 +44,24 @@ public class EditController {
             fldCategory.setText(movie.getCategory());
             fldAbout.setText(movie.getAbout());
             fldActors.setText(movie.getActors());
-            spinLength.setPromptText(String.valueOf(movie.getLength()));
+            spinLength.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(10, 10000, movie.getLength() , 5));
             dpPublishDate.setValue(movie.getPublishDate());
         }
+        dpPublishDate.valueProperty().addListener(new ChangeListener<LocalDate>() {
+            @Override
+            public void changed(ObservableValue<? extends LocalDate> observableValue, LocalDate o, LocalDate n) {
+                if (validanDatum(n))
+                {
+                    dpPublishDate.getStyleClass().removeAll("poljeNijeIspravno");
+                    dpPublishDate.getStyleClass().add("poljeIspravno");
+                }
+                else {
+                    dpPublishDate.getStyleClass().removeAll("poljeIspravno");
+                    dpPublishDate.getStyleClass().add("poljeNijeIspravno");
+                }
+            }
+        });
     }
-
 
     public Movie getMovie() {
         return movie;
