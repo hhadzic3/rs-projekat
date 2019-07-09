@@ -60,11 +60,12 @@ public class LoginController {
                   s.close();
               }
           }
-      else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning");
-            alert.setHeaderText("User name and password does not exist!");
-            alert.setContentText("User name and password does not exist!" );
+        else if(!provjera2.equals(password) || !provjera1.equals(username)){
+            nameField.setText("");
+            passwordField.setText("");
+            this.nameField.setPromptText("Invalid username");
+            this.passwordField.setPromptText("Invalid password");
+            return;
         }
 
     }
