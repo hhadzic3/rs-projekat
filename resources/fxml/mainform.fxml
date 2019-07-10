@@ -56,15 +56,15 @@
                            </accelerator></MenuItem>
                         <MenuItem onAction="#menuExit" text="E_xit">
                            <accelerator>
-                              <KeyCodeCombination alt="ANY" code="E" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                              <KeyCodeCombination alt="ANY" code="G" control="UP" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator></MenuItem>
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
+                <Menu mnemonicParsing="false" text="_Edit">
                   <items>
-                        <MenuItem onAction="#menuAdd" text="Add">
+                        <MenuItem onAction="#menuAdd" text="A_dd">
                            <accelerator>
-                              <KeyCodeCombination alt="ANY" code="A" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                              <KeyCodeCombination alt="ANY" code="N" control="UP" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator></MenuItem>
                         <MenuItem onAction="#menuChange" text="C_hange">
                            <accelerator>

@@ -227,6 +227,7 @@ public class MainController {
 
     public void borrowAction(ActionEvent actionEvent) {
         Movie movie = tblMovies.getSelectionModel().getSelectedItem();
+        if (movie == null) return;
         if(movie.getBorrowed() != true) {
             movie.setBorrowed(true);
             dao.updateMovieBorrowed(movie);
@@ -236,6 +237,7 @@ public class MainController {
 
     public void returnAction(ActionEvent actionEvent) {
         Movie movie = tblMovies.getSelectionModel().getSelectedItem();
+        if (movie == null) return;
         if(movie.getBorrowed() != false) {
             movie.setBorrowed(false);
             dao.updateMovieBorrowed(movie);
@@ -252,7 +254,7 @@ public class MainController {
             loader.setController(editController);
             root = loader.load();
             stage.setTitle("List of users");
-            stage.setScene(new Scene(root,400,200));
+            stage.setScene(new Scene(root,500,300));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
